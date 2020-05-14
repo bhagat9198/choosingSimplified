@@ -1,0 +1,160 @@
+.pic {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  /* border: 1px solid black; */
+  /* border-top-left-radius: 10%; */
+}
+
+.card {
+  padding: 2% 2%;
+  margin-bottom: 2%;
+  border-radius: 10px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 2px solid #009970;
+}
+
+.card-details {
+  border-left: 2px solid #009970;
+}
+
+.div-lable-title {
+  font-weight: bolder;
+  font-size: 550px;
+  font-style: italic;
+  font-style: bold;
+}
+
+.div-label {
+  padding-bottom: 2%;
+  font-size: larger;
+}
+
+.icon {
+  margin-right: 5%;
+}
+
+.main-heading {
+  text-align: center;
+  color: #009970;
+  font-weight: bolder;
+  font-style: italic;
+}
+
+.all-details {
+  /* text-align: center; */
+  justify-content: center;
+  font-size: 120%;
+}
+
+.table-row {
+  border-bottom: 1px solid #009970;
+}
+
+
+/* input[type="checkbox"] */
+input[type="radio"]{
+  vertical-align: text-top;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-outline-style: none;
+  -moz-outline-style: none;
+  appearance: none;
+  outline:none;
+	outline:0;
+}
+
+.checkboxData {
+  font-size: small;
+}
+.color{
+  color: gold;
+}
+
+input[type='radio']:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -3px;
+  left: -1px;
+  position: relative;
+  background-color: #d1d3d1;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+
+}
+
+input[type='radio']:checked:after {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  top: -3px;
+  left: -1px;
+  position: relative;
+  background-color: #009970;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+
+}
+
+
+.dropBtn {
+  background-color: #009970;
+}
+
+.optionText {
+  color: #009970;
+  border-color: #009970;
+}
+
+.subhead {
+  font-size: smaller;
+}
+
+.msg {
+  text-align: center;
+
+}
+
+.msg a {
+  font-size: 120%;
+}
+
+.ask-login-page {
+  background: linear-gradient(to top, #009970, #fff);
+}
+
+input[type="file"] {
+  color: #009970;
+}
+
+input[type="file"]:changed {
+  color: #009970;
+}
+
+.UploadBtn {
+  justify-content: center;
+  text-align: center;
+  background-color: #009970;
+}
+
+.hrLine {
+  border-width: 5px;
+}
+
+.textColor {
+  color: #009970;
+}
+
+.heading {
+  font-weight: bolder;
+  font-size: 120%;
+  font-style: oblique;
+}
