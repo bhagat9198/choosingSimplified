@@ -6,11 +6,11 @@ const mongoose = require('mongoose');
 const ejs = require('ejs');
 
 const rootDir = require('./util/path');
-// const authRoutes = require('./routes/auth');
-// const collegesRoutes = require('./routes/colleges');
+const authRoutes = require('./routes/auth');
+const collegesRoutes = require('./routes/colleges');
 const homeRoutes = require('./routes/home');
-// const schoolsRoutes = require('./routes/schools');
-// const teachersRoutes = require('./routes/teachers');
+const schoolsRoutes = require('./routes/schools');
+const teachersRoutes = require('./routes/teachers');
 
 const app = express();
 
@@ -23,10 +23,10 @@ app.set('views', 'views');
 // telling server about public files
 app.use(express.static(path.join(rootDir, 'public')));
 
-// app.use(authRoutes);
-// app.use(collegesRoutes);
+app.use('/auth',authRoutes);
+// app.use('/colleges',collegesRoutes);
+// app.use('/schools',schoolsRoutes);
+// app.use('/teachers',teachersRoutes);
 app.use(homeRoutes);
-// app.use(schoolsRoutes);
-// app.use(teachersRoutes);
 
 app.listen(9000);
