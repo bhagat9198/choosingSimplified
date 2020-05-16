@@ -24,9 +24,9 @@ app.set('views', 'views');
 app.use(express.static(path.join(rootDir, 'public')));
 
 app.use('/auth',authRoutes);
-// app.use('/colleges',collegesRoutes);
-// app.use('/schools',schoolsRoutes);
-// app.use('/teachers',teachersRoutes);
+app.use('/colleges',collegesRoutes);
+app.use('/schools',schoolsRoutes);
+app.use('/teachers',teachersRoutes);
 app.use(homeRoutes);
 
 app.listen(9000);

@@ -5,7 +5,6 @@
   <main id="main">
     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
-
         <div class="d-flex justify-content-between align-items-center">
           <h2>Add Teacher</h2>
           <ol>
@@ -19,14 +18,14 @@
     <section id="contact" class="contact">
       <div class="container">
         <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
+          <div class="col-lg-4" data-aos="fade-up">
             <div class="section-title">
               <h2>Add Teacher</h2>
               <p>Add the teacher. Kindly give the correct inforamtion as much as possible as your information will effect lot of people in making their choices. <br>Thank you</p>
             </div>
           </div>
 
-          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-8" data-aos-delay="100" data-aos="fade-up">
             <form action="forms/contact.php" method="post" role="form" class="php-email-form mt-4">
                 <div class="form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Teacher Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
@@ -195,12 +194,11 @@
               </div>
               <div class="text-center"><button type="submit">Add Teacher</button></div>
             </form>
-          </div>
+          <!-- </div> -->
         </div>
-
       </div>
     </section>
-   </main>
+  </main>
 
    <%- include('../partials/footer.ejs') %>
 

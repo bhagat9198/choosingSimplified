@@ -22,5 +22,5 @@ exports.useDashbord = (req, res, next) => {
   res.render('auth/dashbord', {
     pageTitle: 'Dashbord'
   });
-};
+}; 
 

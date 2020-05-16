@@ -1,5 +1,5 @@
 exports.getAddTeacher = (req, res, next) => {
-  res.render('/teachers/add-teacher', {
+  res.render('teachers/add-teacher', {
     pageTitle: 'Add Teacher'
   });
 };
@@ -9,13 +9,13 @@ exports.postAddTeacher= (req, res, next) => {
 };
 
 exports.getTeacherDetails = (req, res, next) => {
-  res.render('/teachers/teachers-details', {
+  res.render('teachers/teacher-details', {
     pageTitle: 'Teacher Details'
   });
 };
 
 exports.getTeachersList = (req, res, next) => {
-  res.render('/teachers/teachers-list', {
+  res.render('teachers/teachers-list', {
     pageTitle: 'Teachers List'
   });
 };
