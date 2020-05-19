@@ -27,76 +27,68 @@
             </div>
           </div>
 
+          
           <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form mt-4">
+            <form action="/colleges/add-college" method="POST" enctype="multipart/form-data" class="php-email-form mt-4">
                 <div class="form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="College or Unversity Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                  <div class="validate"></div>
+                  <input type="text" required name="name" class="form-control" id="name" placeholder="College or Unversity Name"  />
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="College or Unversity Official Email" data-rule="email" data-msg="Please enter a valid email" />
-                  <div class="validate"></div>
+                  <input type="email" required class="form-control" name="email" id="email" placeholder="College or Unversity Official Email" data-rule="email"  />
                 </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="website" id="website" placeholder="College or Unversity Official Website" data-rule="minlen:4" data-msg="Please enter valid website name (https://www.....)" />
-                <div class="validate"></div>
+                <input type="text" required class="form-control" name="website" id="website" placeholder="College or Unversity Official Website"/>
+
               </div>
               <div class="form-group">
-                <input type="number" min="0000000000" max="9999999999" class="form-control" name="phoneNo" id="phoneNo" placeholder="College or Unversity Official Phone Number" data-rule="minlen:4" data-msg="Please enter 10 digit phone number." />
-                <div class="validate"></div>
+                <input type="number" required min="1000000000" max="9999999999" class="form-control" name="phone" id="phone" placeholder="College or Unversity Official Phone Number" />
+ 
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="loaction" id="loaction" placeholder="College or Unversity Location" data-rule="minlen:4" data-msg="Please enter at least 4 chars of subject" />
-                <div class="validate"></div>
+                <input type="text" required class="form-control" name="loaction" id="loaction" placeholder="College or Unversity Location"  />
+
               </div>
               <div class="form-group">
-                <input type="number" min="1900" max="2020" name="buildYear" id="buildYear" placeholder="Year in which College or Unversity was build" class="form-control" name="website" id="website"  />
-                <div class="validate"></div>
+                <input type="number" min="1900" max="2020" name="buildYear" id="buildYear" placeholder="Year in which College or Unversity was build" class="form-control"   />
+
               </div>
               <div class="form-group row">
                 <div class="col-md-3">College or Unversity Rating</div>
                 <div class="col-md-6">
-                  <input type="radio" id="star5"  name="ratingStars" value="5">
+                  <input type="radio" id="star5"  name="stars" value="5">
                   <label  for="star5"><i class="fas fa-star color"></i><i class="fas fa-star color"></i><i class="fas fa-star color"></i><i class="fas fa-star color"></i><i class="fas fa-star color"></i></label>
                   <br>
-                  <input type="radio"  id="star4" name="ratingStars" value="customEx1">
+                  <input type="radio"  id="star4" name="stars" value="4">
                   <label  for="star4"><i class="fas fa-star color"></i><i class="fas fa-star color"></i><i class="fas fa-star color"></i><i class="fas fa-star color"></i></label>
                   <br>
-                  <input type="radio"  id="star3" name="ratingStars" value="customEx3">
+                  <input type="radio"  id="star3" name="stars" value="3">
                   <label  for="star3"><i class="fas fa-star color"></i><i class="fas fa-star color"></i><i class="fas fa-star color"></i></label>
                   <br>
-                  <input type="radio"  id="star2" name="ratingStars" value="customEx4">
+                  <input type="radio"  id="star2" name="stars" value="2">
                   <label  for="star2"><i class="fas fa-star color"></i><i class="fas fa-star color"></i></label>
                   <br>
-                  <input type="radio"  id="star1" name="ratingStars" value="customEx4">
+                  <input type="radio"  id="star1" name="stars" value="1">
                   <label  for="star1"><i class="fas fa-star color"></i></label>
                 </div>
               </div>
               <div class="form-group">
-                <select class="form-control" id="instituteType">
+                <select name="instituteType" required class="form-control" id="instituteType">
                   <option selected="" disabled="" value="">Type of College or Unversity</option>
-                  <option >Engineering</option>
-                  <option>Medical</option>
-                  <option>Commerce</option>
-                  <option>Diploma</option>
-                  <option>Combination of all the streams</option>
+                  <option value="engineering">Engineering</option>
+                  <option value="medical">Medical</option>
+                  <option value="commerce">Commerce</option>
+                  <option value="diploma">Diploma</option>
+                  <option value="all-in-one">Combination of all the streams</option>
                 </select>
               </div>
               <div class="form-group">
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-                  <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-                  <div class="invalid-feedback">Example invalid custom file feedback</div>
+                  <input type="file" name="image" class="custom-file-input" id="collegeImg" required>
+                  <label class="custom-file-label" for="collegeImg">Choose file...</label>
                 </div>
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Please write something for about the College or Unversity so that other people can know it better."></textarea>
-                <div class="validate"></div>
-              </div>
-              <div class="mb-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <textarea class="form-control" required name="message" rows="5" placeholder="Please write something for about the College or Unversity so that other people can know it better."></textarea>
               </div>
               <div class="text-center"><button type="submit">Add College or Unversity</button></div>
             </form>

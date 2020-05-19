@@ -16,47 +16,41 @@
       </div>
     </section>
 
-
-    <!-- <section id="portfolio-details" class="portfolio-details">
-      <div class="container"> 
-        <div class="portfolio-details-container" >
-          <div class="owl-carousel portfolio-details-carousel">
-            <img src="/img/schools/sch1.png" class="img-fluid" alt="">
-            <img src="/img/schools/sch2.jpg" class="img-fluid" alt="">
-            <img src="/img/schools/sch3.jpg" class="img-fluid" alt="">
-          </div>
-      </div>
-    </section> -->
-
     <section id="portfolio-details" class="portfolio-details">
       <div class="container"> 
         <div class="portfolio-details-container" >
           <div class="owl-carousel portfolio-details-carousel">
-            <img src="/img/pic1.png" class="img-fluid" alt="">
-            <img src="/img/pic2.jpg" class="img-fluid" alt="">
-            <img src="/img/pic3.jpg" class="img-fluid" alt="">
+            <img src="/img/tea1.jpeg" class="img-fluid" alt="">
+            <img src="/img/tea2.jpg" class="img-fluid" alt="">
+            <img src="/img/tea3.jpg" class="img-fluid" alt="">
           </div>
       </div>
     </section>
 
     <section class="container">
       <div class="cards">
-        <div class="card ">
-          <div class="row">
-            <div class="card-img col-md-4 col-xs-4">
-              <img class="pic" src="/img/coverImg.png" alt="">
-            </div>
-            <div class="card-details col-md-8 col-xs-8">
-              <div>
-                <a class="div-lable-title div-label" href="#"><h2><u><b><i>Teacher Name</i></b></u></h2> </a>
+        <% if(teachers.length) { %>
+          <% for(let teacher of teachers) { %>
+            <div class="card ">
+              <div class="row">
+                <div class="div-card-img col-md-4 col-xs-4">
+                  <img class="pic" src="/<%= teacher.imagePath %>" alt="">
+                </div>
+                <div class="card-details col-md-8 col-xs-8">
+                  <div>
+                    <a class="div-lable-title div-label" href="/teachers/teacher-details/<%= teacher._id %>"><h2><u><b><i><%= teacher.name %></i></b></u></h2> </a>
+                  </div>
+                  <div class="div-label"><i class="fas fa-university icon"></i><%= teacher.instituteName %></div>
+                  <div class="div-label"><i class="fas fa-phone-alt icon"></i><b>+91 </b><%= teacher.phone %></div>
+                  <div class="div-label"><i class="fas fa-globe-asia icon"></i><a href="<%= teacher.website %>"><%= teacher.website %></a></div>
+                  <div class="div-label"><i class="fa fa-link icon" ></i><a href="/teachers/teacher-details/<%= teacher._id %>">More details</a></div>
+                </div>
               </div>
-              <div class="div-label"><i class="fas fa-university icon"></i>Institute name</div>
-              <div class="div-label"><i class="fas fa-phone-alt icon"></i><b>+91</b>Teacher Phone Number</div>
-              <div class="div-label"><i class="fas fa-globe-asia icon"></i>Teacher blog Website</div>
-              <div class="div-label"><i class="fa fa-link icon" ></i><a href="/teachers/teacher-details">More details</a></div>
             </div>
-          </div>
-        </div>
+          <% } %>
+        <% } else { %>
+          <h1 class="text-center textColor">No Teacher Registered</h1>
+        <% } %>
       </div>
     </section>
   </main>

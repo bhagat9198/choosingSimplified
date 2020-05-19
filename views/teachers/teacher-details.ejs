@@ -18,13 +18,13 @@
 
 
     <section class="container">
-      <div class="main-img text-center">
-        <img src="/img/pic2.jpg" alt="School">
+      <div class="div-main-img text-center">
+        <img class="pic" src="/<%= teacher.imagePath %>" alt="School">
       </div>
       <br>
       <hr>
       <div>
-        <h1 class="main-heading"> Teacher Name</h1>
+        <h1 class="main-heading"><%= teacher.name %></h1>
       </div>
       <br><br>
       <div class="row">
@@ -39,35 +39,35 @@
           <tbody>
             <tr class="table-row">
               <td><i class="fas fa-map-marker-alt icon"></i>Loaction</td>
-              <td>Bangalore</td>
+              <td><%= teacher.location %></td>
             </tr>
             <tr class="table-row">
               <td><i class="fas fa-phone-alt icon"></i>Contact Number</td>
-              <td><b>+ 91 </b>999 8888 222</td>
+              <td><b>+ 91 </b><%= teacher.phone %></td>
             </tr>
             <tr class="table-row">
               <td><i class="fas fa-globe-asia icon"></i>Blog Website</td>
-              <td><a href="www.gmail.com">www.gmail.com</a> </td>
+              <td><a href="<%= teacher.website %>"><%= teacher.website %></a> </td>
             </tr>
             <tr class="table-row">
               <td><i class="fas fa-book icon"></i>Subjects Taught</td>
-              <td>abcd</td>
+               <td><%= teacher.subjects[0] %>, <%= teacher.subjects[1] %></td>
             </tr>
             <tr class="table-row">
               <td><i class="fas fa-star icon"></i>Taecher Rating</td>
-              <td>5</td>
+              <td><%= teacher.stars %></td>
             </tr>
             <tr class="table-row">
               <td><i class="fas fa-chalkboard"></i>Taeching Since</td>
-              <td>5 years</td>
+              <td><%= teacher.teachingSince %> years</td>
             </tr>
             <tr class="table-row">
-              <td><i class="fas fa-university"></i>Taeching In</td>
-              <td>institute name</td>
+              <td><i class="fas fa-university"></i>Teaching In</td>
+              <td><%= teacher.instituteName %></td>
             </tr>
             <tr class="table-row">
               <td><i class="fas fa-envelope-open-text"></i>Message</td>
-              <td>few words...</td>
+              <td><%= teacher.message %></td>
             </tr>
           </tbody>
         </table>

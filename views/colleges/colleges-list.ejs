@@ -23,31 +23,37 @@
         <div class="portfolio-details-container" data-aos="fade-up" data-aos-delay="100">
 
           <div class="owl-carousel portfolio-details-carousel">
-            <img src="/img/pic1.png" class="img-fluid" alt="">
-            <img src="/img/pic2.jpg" class="img-fluid" alt="">
-            <img src="/img/pic3.jpg" class="img-fluid" alt="">
+            <img src="/img/clg1.jpg" class="img-fluid" alt="">
+            <img src="/img/clg2.jpg" class="img-fluid" alt="">
+            <img src="/img/clg3.jpg" class="img-fluid" alt="">
           </div>
       </div>
     </section>
 
     <section class="container">
       <div class="cards">
-        <div class="card ">
-          <div class="row">
-            <div class="card-img col-md-4 col-xs-4">
-              <img class="pic" src="/img/coverImg.png" alt="">
-            </div>
-            <div class="card-details col-md-8 col-xs-8">
-              <div>
-                <a class="div-lable-title div-label" href="#"><h2><u><b><i>College Name</i></b></u></h2> </a>
+        <% if(colleges.length) { %>
+          <% for(let college of colleges) { %>
+            <div class="card ">
+              <div class="row">
+                <div class="div-card-img col-md-4 col-xs-4">
+                  <img class="pic" src="/<%= college.imagePath %>" alt="">
+                </div>
+                <div class="card-details col-md-8 col-xs-8">
+                  <div>
+                    <a class="div-lable-title div-label" href="/colleges/college-details/<%= college._id %>"><h2><u><b><i><%= college.name %></i></b></u></h2> </a>
+                  </div>
+                  <div class="div-label"><i class="fas fa-map-marker-alt icon"></i><%= college.location %></div>
+                  <div class="div-label"><i class="fas fa-phone-alt icon"></i><b>+91 </b><%= college.phone %></div>
+                  <div class="div-label"><i class="fas fa-globe-asia icon"></i><a href="<%= college.website %>"><%= college.website %></a></div>
+                  <div class="div-label"><i class="fa fa-link icon" ></i><a href="/colleges/college-details/<%= college._id %>">More details</a></div>
+                </div>
               </div>
-              <div class="div-label"><i class="fas fa-map-marker-alt icon"></i>College Location</div>
-              <div class="div-label"><i class="fas fa-phone-alt icon"></i><b>+91</b> College  Phone Number</div>
-              <div class="div-label"><i class="fas fa-globe-asia icon"></i>College  Website</div>
-              <div class="div-label"><i class="fa fa-link icon" ></i><a href="/colleges/college-details">More details</a></div>
             </div>
-          </div>
-        </div>
+          <% } %>
+        <% } else { %>
+            <h1 class="text-center textColor">No Colleges Registered</h1>
+         <% } %> 
       </div>
     </section>
   </main>

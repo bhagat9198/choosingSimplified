@@ -22,7 +22,7 @@
         <div class="portfolio-details-container" data-aos="fade-up" data-aos-delay="100">
 
           <div class="owl-carousel portfolio-details-carousel">
-            <img src="/img/pic1.png" class="img-fluid" alt="">
+            <img src="/img/pic1.jpg" class="img-fluid" alt="">
             <img src="/img/pic2.jpg" class="img-fluid" alt="">
             <img src="/img/pic3.jpg" class="img-fluid" alt="">
           </div>
@@ -31,22 +31,28 @@
 
     <section class="container">
       <div class="cards">
-        <div class="card ">
-          <div class="row">
-            <div class="card-img col-md-4 col-xs-4">
-              <img class="pic" src="/img/coverImg.png" alt="">
-            </div>
-            <div class="card-details col-md-8 col-xs-8">
-              <div>
-                <a class="div-lable-title div-label" href="#"><h2><u><b><i>School Name</i></b></u></h2> </a>
+        <% if(schools.length) { %>
+          <% for(let school of schools) { %>
+            <div class="card ">
+              <div class="row">
+                <div class="div-card-img col-md-4 col-xs-4">
+                  <img class="pic" src="/<%= school.imagePath %>" alt="">
+                </div>
+                <div class="card-details col-md-8 col-xs-8">
+                  <div>
+                    <a class="div-lable-title div-label" href="/schools/school-details/<%=school._id %>"><h2><u><b><i><%= school.name %></i></b></u></h2> </a>
+                  </div>
+                  <div class="div-label"><i class="fas fa-map-marker-alt icon"></i><%= school.location %></div>
+                  <div class="div-label"><i class="fas fa-phone-alt icon"></i><b>+91 </b><%= school.phone %></div>
+                  <div class="div-label"><i class="fas fa-globe-asia icon"></i><a href="<%= school.website %>"><%= school.website %></a> </div>
+                  <div class="div-label"><i class="fa fa-link icon" ></i><a href="/schools/school-details/<%=school._id %>">More details</a></div>
+                </div>
               </div>
-              <div class="div-label"><i class="fas fa-map-marker-alt icon"></i>School Location</div>
-              <div class="div-label"><i class="fas fa-phone-alt icon"></i><b>+91</b>Svhool Phone Number</div>
-              <div class="div-label"><i class="fas fa-globe-asia icon"></i>School Website</div>
-              <div class="div-label"><i class="fa fa-link icon" ></i><a href="/schools/school-details">More details</a></div>
             </div>
-          </div>
-        </div>
+          <% } %>
+        <% } else { %>
+          <h1 class="text-center textColor">No Schools Registered</h1>
+        <% } %>
       </div>
     </section>
   </main>

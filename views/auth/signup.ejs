@@ -34,7 +34,7 @@
         <h2 class="main-heading">Welcome to <br>Choosing Simplified</h2>
       </div>
 
-      <form class="login100-form validate-form">
+      <form action="/auth/signup"  method="POST" class="login100-form validate-form">
         <span class="login100-form-title">
           Member Signup
         </span>
@@ -68,7 +68,7 @@
           </span>
         </div>
         <div class="wrap-input100 validate-input" data-validate = "Password is required">
-          <input class="input100" type="password" name="confirm-password" placeholder="Confirm - Password">
+          <input class="input100" type="password" name="cpassword" placeholder="Confirm - Password">
           <span class="focus-input100"></span>
           <span class="symbol-input100">
             <i class="fa fa-lock" aria-hidden="true"></i>
@@ -82,7 +82,7 @@
           </span>
         </div>
         <div class="wrap-input100 validate-input" data-validate = "Select atlest one option.">
-          <select class="input100" >
+          <select name="userType" class="input100" >
             <option selected="" disabled="">You are</option>
             <option value="student">Student</option>
             <option value="teacher">Teacher</option>
@@ -93,7 +93,7 @@
             </span>
         </div>
         <div class="container-login100-form-btn">
-          <button class="login100-form-btn">
+          <button type="submit" class="login100-form-btn">
             Signup
           </button>
         </div>

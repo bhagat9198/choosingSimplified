@@ -26,175 +26,165 @@
           </div>
 
           <div class="col-lg-8" data-aos-delay="100" data-aos="fade-up">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form mt-4">
+            <form action="/teachers/add-teacher" method="POST"  class="php-email-form mt-4" enctype="multipart/form-data">
                 <div class="form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Teacher Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                  <div class="validate"></div>
+                  <input type="text" required name="name" class="form-control" id="name" placeholder="Teacher Name" />
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Teacher Email" data-rule="email" data-msg="Please enter a valid email" />
-                  <div class="validate"></div>
+                  <input type="email" required class="form-control" name="email" id="email" placeholder="Teacher Email" />
                 </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="website" id="website" placeholder="Teacher blog Website" data-rule="minlen:4" data-msg="Please enter valid website name (https://www.....)" />
-                <div class="validate"></div>
+                <input type="text" required class="form-control" name="website" id="website" placeholder="Teacher blog Website" />
               </div>
               <div class="form-group">
-                <input type="number" min="0000000000" max="9999999999" class="form-control" name="phoneNo" id="phoneNo" placeholder="School Official Phone Number" data-rule="minlen:4" data-msg="Please enter at least 10 chars of subject" />
-                <div class="validate"></div>
+                <input type="text" required class="form-control" name="instituteName" id="instituteName" placeholder="Name of institute where teacher is teaching" />
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="location" id="location" placeholder="Teacher Location" data-rule="minlen:4" data-msg="Please enter at least 8 chars" />
-                <div class="validate"></div>
+                <input type="number" min="1000000000" max="9999999999" class="form-control" name="phone" id="phone" placeholder="Teacher Official Phone Number" />
               </div>
               <div class="form-group">
-                <input type="number" min="1" max="100" name="yaerSince" id="yaerSince" placeholder="Teaching since(5,10,..yaers)" class="form-control" name="website" id="website"  />
-                <div class="validate"></div>
+                <input type="text" class="form-control" name="location" id="location" placeholder="Teacher Location" />
+              </div>
+              <div class="form-group">
+                <input type="number" required min="1" max="100" name="teachingSince" id="teachingSince" placeholder="Teaching since (5,10,..yaers)" class="form-control"/>
               </div>
               <div class="form-group row">
-                <div class="col-md-3">College or Unversity Rating</div>
+                <div class="col-md-3">Teacher Rating</div>
                 <div class="col-md-6">
-                  <input type="radio" id="star5"  name="ratingStars" value="5">
+                  <input type="radio" id="star5"  name="stars" value="5">
                   <label  for="star5"><i class="fas fa-star color"></i><i class="fas fa-star color"></i><i class="fas fa-star color"></i><i class="fas fa-star color"></i><i class="fas fa-star color"></i></label>
                   <br>
-                  <input type="radio"  id="star4" name="ratingStars" value="customEx1">
+                  <input type="radio"  id="star4" name="stars" value="4">
                   <label  for="star4"><i class="fas fa-star color"></i><i class="fas fa-star color"></i><i class="fas fa-star color"></i><i class="fas fa-star color"></i></label>
                   <br>
-                  <input type="radio"  id="star3" name="ratingStars" value="customEx3">
+                  <input type="radio"  id="star3" name="stars" value="3">
                   <label  for="star3"><i class="fas fa-star color"></i><i class="fas fa-star color"></i><i class="fas fa-star color"></i></label>
                   <br>
-                  <input type="radio"  id="star2" name="ratingStars" value="customEx4">
+                  <input type="radio"  id="star2" name="stars" value="2">
                   <label  for="star2"><i class="fas fa-star color"></i><i class="fas fa-star color"></i></label>
                   <br>
-                  <input type="radio"  id="star1" name="ratingStars" value="customEx4">
+                  <input type="radio"  id="star1" name="stars" value="1">
                   <label  for="star1"><i class="fas fa-star color"></i></label>
                 </div>
               </div>
               <div class="form-group row">
-                <div class="col-md-2">Subjects taught by teacher <br> <span class="subhead">(Choose max 3 subjects)</span> </div>
+                <div class="col-md-2">Subjects taught by teacher <br> <span class="subhead">(Choose max 2 subjects)</span> </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-3 checkboxData">
                   <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="sub1" required>
+                    <input type="checkbox" name="subject" value="Aeronautical Engineering" class="custom-control-input" id="sub1">
                     <label class="custom-control-label" for="sub1">Aeronautical Engineering</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="sub2" required>
+                    <input type="checkbox" name="subject" class="custom-control-input" id="sub2" value="Biomedical Engineering">
                     <label class="custom-control-label" for="sub2">Biomedical Engineering</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="sub3" required>
+                    <input type="checkbox" name="subject" class="custom-control-input" id="sub3" value="Biotechnology Engineering">
                     <label class="custom-control-label" for="sub3">Biotechnology Engineering</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="sub4" required>
+                    <input type="checkbox" name="subject" class="custom-control-input" id="sub4"  value="Chemical Engineering">
                     <label class="custom-control-label" for="sub5">Chemical Engineering</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="sub5" required>
+                    <input type="checkbox" name="subject" class="custom-control-input" id="sub5" value="Civil Engineering">
                     <label class="custom-control-label" for="sub5">Civil Engineering</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="sub6" required>
+                    <input type="checkbox" name="subject" class="custom-control-input" id="sub6" value="Computer Science Engineering">
                     <label class="custom-control-label" for="sub6">Computer Science Engineering</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="sub7" required>
+                    <input type="checkbox"  name="subject" class="custom-control-input" id="sub7" value="Electrical Engineering">
                     <label class="custom-control-label" for="sub7">Electrical Engineering</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="sub8" required>
+                    <input type="checkbox" name="subject" class="custom-control-input" id="sub8" value="Electronics Engineering">
                     <label class="custom-control-label" for="sub8">Electronics Engineering</label>
                   </div>
                 </div>
                 <div class="col-md-3 checkboxData">
                   <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="sub9" required>
+                    <input type="checkbox" name="subject" class="custom-control-input" id="sub9" value="Human Anatomy">
                     <label class="custom-control-label" for="sub9">Human Anatomy</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="sub10" required>
+                    <input type="checkbox" name="subject" class="custom-control-input" id="sub10" value="Orthopaedics">
                     <label class="custom-control-label" for="sub10">Orthopaedics</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="sub11" required>
+                    <input type="checkbox" name="subject" class="custom-control-input" id="sub11" value="Biochemistry">
                     <label class="custom-control-label" for="sub11">Biochemistry</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="sub12" required>
+                    <input type="checkbox" name="subject" class="custom-control-input" id="sub12" value="Psychiatry">
                     <label class="custom-control-label" for="sub12">Psychiatry</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="sub13" required>
+                    <input type="checkbox" name="subject" class="custom-control-input" id="sub13" value="Paediatrics">
                     <label class="custom-control-label" for="sub13">Paediatrics</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="sub14" required>
+                    <input type="checkbox" name="subject" class="custom-control-input" id="sub14" value="Gynaecology">
                     <label class="custom-control-label" for="sub14">Gynaecology</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="sub15" required>
+                    <input type="checkbox" name="subject" class="custom-control-input" id="sub15" value="Obstetrics">
                     <label class="custom-control-label" for="sub15">Obstetrics</label>
                   </div> 
                   <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="sub16" required>
+                    <input type="checkbox" name="subject" class="custom-control-input" id="sub16" value="Anesthesiology">
                     <label class="custom-control-label" for="sub16">Anesthesiology</label>
                   </div>
                 </div>
                 <div class="col-md-3 checkboxData">
                   <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="sub17" required>
+                    <input type="checkbox" name="subject" class="custom-control-input" id="sub17" value="Accounting">
                     <label class="custom-control-label" for="sub17">Accounting</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="sub18" required>
+                    <input type="checkbox" name="subject" class="custom-control-input" id="sub18" value="Taxation">
                     <label class="custom-control-label" for="sub18">Taxation</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="sub19" required>
+                    <input type="checkbox"name="subject"  class="custom-control-input" id="sub19" value="Auditing and Assurance">
                     <label class="custom-control-label" for="sub19">Auditing and Assurance</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="sub20" required>
+                    <input type="checkbox" name="subject" class="custom-control-input" id="sub20" value="Risk Management">
                     <label class="custom-control-label" for="sub20">Risk Management</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="sub21" required>
+                    <input type="checkbox" name="subject" class="custom-control-input" id="sub21" value="Economic Laws">
                     <label class="custom-control-label" for="sub21">Economic Laws</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="sub22" required>
+                    <input type="checkbox" name="subject" class="custom-control-input" id="sub22" value="Strategic Management">
                     <label class="custom-control-label" for="sub22">Strategic Management</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="sub23" required>
+                    <input type="checkbox" name="subject" class="custom-control-input" id="sub23" value="Finance Management">
                     <label class="custom-control-label" for="sub23">Finance Management</label>
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" id="sub24" required>
+                    <input type="checkbox" name="subject" class="custom-control-input" id="sub24" value="International Taxation">
                     <label class="custom-control-label" for="sub24">International Taxation</label>
                   </div>
                 </div>
               </div>
               <div class="form-group">
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-                  <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-                  <div class="invalid-feedback">Example invalid custom file feedback</div>
+                  <input type="file" name="image" class="custom-file-input"  id="teacherImg" required >
+                  <label class="custom-file-label" for="teacherImg">Choose file...</label>
                 </div>
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Please write something for about the teacher so that other people can know it better."></textarea>
-                <div class="validate"></div>
-              </div>
-              <div class="mb-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <textarea class="form-control" name="message" rows="5" data-rule="required" required placeholder="Please write something for about the teacher so that other people can know it better."></textarea>
               </div>
               <div class="text-center"><button type="submit">Add Teacher</button></div>
             </form>
-          <!-- </div> -->
+          </div>
         </div>
       </div>
     </section>

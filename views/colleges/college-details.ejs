@@ -14,17 +14,17 @@
           </ol>
         </div>
       </div>
-    </section>
+    </section> 
 
 
     <section class="container">
-      <div class="main-img text-center">
-        <img src="/img/pic3.jpg" alt="School">
+      <div class="div-main-img text-center">
+        <img class="pic" src="/<%= college.imagePath %>" alt="School">
       </div>
       <br>
       <hr>
       <div>
-        <h1 class="main-heading"> College or Unversity Name</h1>
+        <h1 class="main-heading"><%= college.name %></h1>
       </div>
       <br><br>
       <div class="row">
@@ -39,31 +39,31 @@
           <tbody>
             <tr class="table-row">
               <td><i class="fas fa-map-marker-alt icon"></i>Loaction</td>
-              <td>Bangalore</td>
+              <td><%= college.location %></td>
             </tr>
             <tr class="table-row">
               <td><i class="fas fa-phone-alt icon"></i>Contact Number</td>
-              <td><b>+ 91 </b>999 8888 222</td>
+              <td><b>+ 91 </b><%= college.phone %></td>
             </tr>
             <tr class="table-row">
               <td><i class="fas fa-globe-asia icon"></i>Website</td>
-              <td>www.gmail.com</td>
+              <td><a href="<%= college.website %>"><%= college.website %></a></td>
             </tr>
-            <tr class="table-row">
+            <!-- <tr class="table-row">
               <td><i class="fa fa-users icon" aria-hidden="true"></i>Teachers registered</td>
               <td>89</td>
-            </tr>
+            </tr> -->
             <tr class="table-row">
               <td><i class="fas fa-star icon"></i>Rating</td>
-              <td>5</td>
+              <td><%= college.stars %></td>
             </tr>
             <tr class="table-row">
               <td><i class="fas fa-th-list icon"></i>Type of College or Unversity</td>
-              <td>KidergardenKidergarden</td>
+              <td><%= college.instituteType %></td>
             </tr>
             <tr class="table-row">
               <td><i class="fas fa-envelope-open-text"></i>Message</td>
-              <td>few words...</td>
+              <td><%= college.message %></td>
             </tr>
           </tbody>
         </table>

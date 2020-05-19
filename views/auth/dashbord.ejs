@@ -19,12 +19,20 @@
       <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-4 ">
-            <img class="dashbordPic" src="/img/pic2.jpg" alt="">
+          <% if(imageMsg) { %>
+            <div class="text-center" style="color: green;"><%= imageMsg %><br><br></div>
+          <% } %>
+
+          <% if(user.imagePath) { %>
+            <img class="dashbordPic" src="/<%= user.imagePath %>" alt="">
+          <% } else { %>
+            <img class="dashbordPic" src="/img/aboutMe.png " alt="">
+          <% } %>
           <br>
           <div class="row">
-            <form class="col-md-4">
+            <form method="POST" action="/auth/post-img" class="col-md-4" enctype="multipart/form-data">
               <label for="fileUpload"></label>
-              <input type="file" class="btn" id="fileUpload">
+              <input type="file" name="image" class="btn" id="fileUpload">
               <br><br>
               <input type="submit" class="btn UploadBtn text-center" value="Upload Image"/>
             </form>
@@ -32,7 +40,7 @@
         </div>
         <div class="col-md-1"></div>
         <div class="col-md-6">
-          <a href="#"><h2>User Name</h2></a>
+          <a href="#"><h2><%= user.fname %> <%= user.lname %></h2></a>
           <hr class="hrLine">
           <br>
           <div class="row">
@@ -60,21 +68,25 @@
             </div>
             <div class="col-md-4">
               <div>
-                test@test.com
+                <%= user.email %>
               </div>
               <div>
-                abc
+                <%= user.institute %>
               </div>
               <div>
-                Student/Teacher
+                <%= user.userType %>
               </div>
             </div>
           </div>
           <br><br>
           <div class="jumbotron">
+            <% if(errorMessage) { %>
+              <div class="text-center" style="color: red;"><%= errorMessage %><br><br></div>
+            <% } %>
             <h6 class="text-center textColor heading">Reset your password</h6>
             <br>
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form mt-4">
+            <form action="/auth/password-reset" method="post" class="php-email-form mt-4">
+              
               <div class="form-group">
                 <input type="password" name="oldPassword" class="form-control" id="oldPassword" placeholder="Enter your old Password" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                 <div class="validate"></div>

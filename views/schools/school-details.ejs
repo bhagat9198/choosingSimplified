@@ -18,13 +18,13 @@
     </section>
 
     <section class="container">
-      <div class="main-img text-center">
-        <img src="/img/pic2.jpg" alt="School">
+      <div class="text-center div-main-img ">
+        <img class="pic" src="/<%= school.imagePath %>" alt="School">
       </div>
       <br>
       <hr>
       <div>
-        <h1 class="main-heading"> School Name</h1>
+        <h1 class="main-heading"><%= school.name %></h1>
       </div>
       <br><br>
       <div class="row">
@@ -39,31 +39,31 @@
           <tbody>
             <tr class="table-row">
               <td><i class="fas fa-map-marker-alt icon"></i>Loaction</td>
-              <td>Bangalore</td>
+              <td><%= school.location %></td>
             </tr>
             <tr class="table-row">
               <td><i class="fas fa-phone-alt icon"></i>Contact Number</td>
-              <td><b>+ 91 </b>999 8888 222</td>
+              <td><b>+ 91 </b><%= school.phone %></td>
             </tr>
             <tr class="table-row">
               <td><i class="fas fa-globe-asia icon"></i>Website</td>
-              <td>www.gmail.com</td>
+              <td><a href="<%= school.website %>"><%= school.website %></a></td>
             </tr>
-            <tr class="table-row">
+            <!-- <tr class="table-row">
               <td><i class="fa fa-users icon"></i>Teachers registered</td>
               <td>89</td>
-            </tr>
+            </tr> -->
             <tr class="table-row">
               <td><i class="fas fa-star icon"></i>Rating</td>
-              <td>5</td>
+              <td><%= school.stars %></td>
             </tr>
             <tr class="table-row">
               <td><i class="fas fa-star icon"></i>Type of school</td>
-              <td>Kidergarden</td>
+              <td><%= school.instituteType %></td>
             </tr>
             <tr class="table-row">
               <td><i class="fas fa-envelope-open-text"></i>Message</td>
-              <td>few words...</td>
+              <td><%= school.message %></td>
             </tr>
           </tbody>
         </table>

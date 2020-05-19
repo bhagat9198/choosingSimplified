@@ -1,13 +1,13 @@
 <%- include('../partials/head.ejs') %>
 
   <link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="/fontawesome-free-5.13.0-web/css/all.css">/
+	<link rel="stylesheet" type="text/css" href="/fontawesome-free-5.13.0-web/css/all.css">
 	<link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css">
 	<link rel="stylesheet" type="text/css" href="/vendor/css-hamburgers/hamburgers.css">
 	<link rel="stylesheet" type="text/css" href="/vendor/select2/select2.css">
 	<link rel="stylesheet" type="text/css" href="/css/loginutil.css">
 	<link rel="stylesheet" type="text/css" href="/css/loginmain.css">
-
+ 
 <%- include('../partials/nav.ejs') %>
 
 <main id="main">
@@ -34,7 +34,7 @@
         <h2 class="main-heading">Welcome to <br>Choosing Simplified</h2>
       </div>
 
-      <form class="login100-form validate-form">
+      <form action="/auth/login" method="POST" class="login100-form validate-form">
         <span class="login100-form-title">
           Member Login
         </span>
@@ -48,7 +48,7 @@
         </div>
 
         <div class="wrap-input100 validate-input" data-validate = "Password is required">
-          <input class="input100" type="password" name="pass" placeholder="Password">
+          <input class="input100" type="password" name="password" placeholder="Password">
           <span class="focus-input100"></span>
           <span class="symbol-input100">
             <i class="fa fa-lock" aria-hidden="true"></i>
@@ -56,7 +56,7 @@
         </div>
         
         <div class="container-login100-form-btn">
-          <button class="login100-form-btn">
+          <button type="submit" class="login100-form-btn">
             Login
           </button>
         </div>
@@ -68,7 +68,6 @@
           </a>
         </div>
       </form>
-      
     </div>
   </div>
 </div>

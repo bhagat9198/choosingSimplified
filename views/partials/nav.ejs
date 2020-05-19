@@ -30,7 +30,22 @@
                 <li><a href="/teachers/add-teacher">Add Teacher</a></li>
               </ul>
             </li>
-            <li class="get-started"><a href="/auth/login">Login</a>
+            <% if(isAuthenticated) { %>
+              <li class="drop-down get-started"><a href="/auth/dashbord">Dashbord</a>
+                <ul>
+                  <li><a href="/auth/dashbord">Dashbord</a></li>
+                  <li><a href="/auth/logout">Logout</a></li>
+                </ul>
+              </li>
+              
+            <% } else { %>
+              <li class="drop-down get-started"><a href="/auth/login">Login</a>
+                <ul>
+                  <li ><a href="/auth/login">Login</a></li>
+                  <li ><a href="/auth/signup">Signup</a></li>
+                </ul>
+              </li> 
+            <% } %>
           </ul>
         </nav>
       </div>
