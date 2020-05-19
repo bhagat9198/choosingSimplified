@@ -54,13 +54,14 @@ app.use('/schools',schoolsRoutes);
 app.use('/teachers',teachersRoutes);
 app.use(homeRoutes);
 
+const PORT = process.env.PORT || 9000;
 
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true,  useUnifiedTopology: true}) 
 .then(connectionStatus => {
   console.log("CONNECTED!!!!!!!");
 })
 .then(result => {
-  app.listen(9000);
+  app.listen(PORT);
 })
 .catch(err => {
   console.log(err); 
